@@ -14,27 +14,21 @@ const Movies = () => {
 
 	return (
 		<section className='movies'>
-			{movies &&
-				movies.map((movie) => {
-					const {
-						imdbID: id,
-						Poster: poster,
-						Title: title,
-						Year: year,
-					} = movie;
+			{movies.map((movie) => {
+				const { imdbID: id, Poster: poster, Title: title, Year: year } = movie;
 
-					return (
-						<Link to={`/movies/${id}`} key={id} className='movie'>
-							<article>
-								<img src={poster == `NA` ? url : poster} alt={title} />
-								<div className='movie-info'>
-									<h4 className='title'>{title}</h4>
-									<p>{year}</p>
-								</div>
-							</article>
-						</Link>
-					);
-				})}
+				return (
+					<Link to={`/movies/${id}`} key={id} className='movie'>
+						<article>
+							<img src={poster == `NA` ? url : poster} alt={title} />
+							<div className='movie-info'>
+								<h4 className='title'>{title}</h4>
+								<p>{year}</p>
+							</div>
+						</article>
+					</Link>
+				);
+			})}
 		</section>
 	);
 };
