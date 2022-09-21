@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./Home";
 import SingleMovie from "./SingleMovie";
@@ -7,12 +7,10 @@ import Movie from "./SingleMovie";
 
 function App() {
 	return (
-		<Switch>
-			<Route path='/' exact>
-				<Home />
-			</Route>
-			<Route path='movies/:id' children={<Movie />} />
-		</Switch>
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='movies/:id' element={<Movie />} />
+		</Routes>
 	);
 }
 

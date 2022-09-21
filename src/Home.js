@@ -1,6 +1,9 @@
 import React from "react";
 import Form from "./SearchForm";
 import Movies from "./Movies";
+import { useEffect } from "react";
+import { useGlobalContext } from "./context";
+
 const Home = () => {
 	return (
 		<main>
